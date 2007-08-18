@@ -15,7 +15,7 @@ Summary:	Apache Request Library
 Name:		libapreq2
 Version:	%{rversion}
 #Release:	%mkrel 0.%{revision}.1
-Release:	%mkrel 6
+Release:	%mkrel 7
 License:	Apache License
 Group:          System/Libraries
 URL:		http://httpd.apache.org/apreq/
@@ -100,7 +100,7 @@ APIs Apache::Request and Apache::Cookie are the lightweight mod_perl analogs of
 the CGI and CGI::Cookie perl modules.
 
 %package -n	apache-%{mod_name}
-Summary:	Mod_%{rname} is a DSO module for the apache Web server
+Summary:	Mod_apreq2 is a DSO module for the apache Web server
 Group:		System/Servers
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
@@ -109,8 +109,6 @@ Requires(pre):	apache >= %{apache_version}
 Requires:	apache-conf >= 2.2.0
 Requires:	apache >= %{apache_version}
 Requires:	perl-libapreq2 = %{rversion}
-Provides:	apache2-%{mod_name}
-Obsoletes:	apache2-%{mod_name}
 
 %description -n	apache-%{mod_name}
 Mod_%{name} is a DSO module for the apache Web server.
