@@ -9,13 +9,14 @@
 %define apache_version 2.2.0
 
 %define	major 2
-%define libname	%mklibname apreq %{major}
+%define libname %mklibname apreq %{major}
+%define develname %mklibname apreq -d
 
 Summary:	Apache Request Library
 Name:		libapreq2
 Version:	%{rversion}
 #Release:	%mkrel 0.%{revision}.1
-Release:	%mkrel 7
+Release:	%mkrel 8
 License:	Apache License
 Group:          System/Libraries
 URL:		http://httpd.apache.org/apreq/
@@ -69,14 +70,15 @@ the CGI and CGI::Cookie perl modules.
 This package contains the shared libraries for %{name}
 %endif
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Development library and header files for the Apache Request Library
 Version:	%{rversion}
 Group:		Development/C
 Requires:	%{libname} = %{version}
 Provides:	libapreq-devel = %{version}
+Obsoletes:	%{mklibname apreq 0 -d}
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 libapreq is a safe, standards-compliant, high-performance library used for
 parsing HTTP cookies, query-strings and POST data. The original version
 (libapreq-1.X) was designed by Lincoln Stein and Doug MacEachern. The perl
@@ -207,7 +209,7 @@ fi
 %doc CHANGES INSTALL README
 %{_libdir}/libapreq*.so.*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc CHANGES INSTALL README
 %{_bindir}/apreq*-config
@@ -230,5 +232,3 @@ fi
 %{perl_vendorlib}/*/Apache2/*
 %{perl_vendorlib}/*/APR/*
 %{_mandir}/man3/*
-
-
