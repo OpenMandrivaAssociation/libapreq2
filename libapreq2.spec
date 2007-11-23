@@ -54,6 +54,7 @@ the CGI and CGI::Cookie perl modules.
 
 This package contains the shared libraries for %{name}
 
+# because it's the same name as srpm one on ia32:
 %if "%{_lib}" != "lib"
 %package -n	%{libname}
 Summary:	Apache Request Library
