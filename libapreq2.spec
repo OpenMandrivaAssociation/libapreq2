@@ -94,6 +94,8 @@ Version:	%{rversion}
 Group:		System/Servers
 Requires:	apache-mod_perl
 Requires:	apache-mod_apreq = %{rversion}
+Provides:   perl-libapreq
+Obsoletes:  perl-libapreq
 
 %description -n perl-libapreq2
 libapreq is a safe, standards-compliant, high-performance library used for
