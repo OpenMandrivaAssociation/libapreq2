@@ -16,7 +16,7 @@ Summary:	Apache Request Library
 Name:		libapreq2
 Version:	%{rversion}
 #Release:	%mkrel 0.%{revision}.1
-Release:	%mkrel 9
+Release:	%mkrel 10
 License:	Apache License
 Group:          System/Libraries
 URL:		http://httpd.apache.org/apreq/
