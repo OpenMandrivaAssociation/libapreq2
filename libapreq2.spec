@@ -105,7 +105,7 @@ APIs Apache::Request and Apache::Cookie are the lightweight mod_perl analogs of
 the CGI and CGI::Cookie perl modules.
 
 %package -n	apache-%{mod_name}
-Summary:	Mod_apreq2 is a DSO module for the apache Web server
+Summary:	DSO module for the apache Web server
 Group:		System/Servers
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
