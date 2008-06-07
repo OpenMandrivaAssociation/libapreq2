@@ -16,7 +16,7 @@ Summary:	Apache Request Library
 Name:		libapreq2
 Version:	%{rversion}
 #Release:	%mkrel 0.%{revision}.1
-Release:	%mkrel 13
+Release:	%mkrel 14
 License:	Apache License
 Group:          System/Libraries
 URL:		http://httpd.apache.org/apreq/
@@ -43,7 +43,7 @@ BuildRequires:	apache-mod_perl-devel
 BuildRequires:	apache-devel >= %{apache_version}
 BuildRequires:	apache-source >= %{apache_version}
 BuildRequires:	apache-mod_ssl >= %{apache_version}
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 libapreq is a safe, standards-compliant, high-performance library used for
