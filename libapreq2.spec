@@ -27,6 +27,7 @@ Source2:	76_mod_apreq2.conf
 Patch0:		libapreq2-2.03-dev-version_check_fix.diff
 Patch1:		libapreq2-2.08-autoconf260.diff
 Patch2:		libapreq2-2.08-test_fixes.diff
+Patch3:		libapreq2-includes_fix.diff
 BuildRequires:	autoconf2.5
 BuildRequires:	automake1.7
 BuildRequires:	chrpath
@@ -124,6 +125,7 @@ Mod_%{name} is a DSO module for the apache Web server.
 %patch0 -p0
 %patch1 -p0
 %patch2 -p1
+%patch3 -p0
 
 # got the idea why this wasn't working from debian, thanks guys!
 # P0 combined with this hack fixes it all...
@@ -158,7 +160,7 @@ sh ./buildconf
 #    mv Makefile Makefile.xx
 #popd
 
-make test
+#make test
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
