@@ -190,9 +190,13 @@ find %{buildroot}%{perl_vendorlib} -name "*.so" | xargs chrpath -d
 rm -f %{buildroot}%{_libdir}/apache-extramodules/*.a
 rm -f %{buildroot}%{_libdir}/apache-extramodules/*.la
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
+%endif
 
 %post -n apache-%{mod_name}
 if [ -f %{_var}/lock/subsys/httpd ]; then
