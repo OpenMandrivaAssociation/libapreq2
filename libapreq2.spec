@@ -16,7 +16,7 @@ Summary:	Apache Request Library
 Name:		libapreq2
 Version:	%{rversion}
 #Release:	%mkrel 0.%{revision}.2
-Release:	%mkrel 15
+Release:	%mkrel 16
 License:	Apache License
 Group:          System/Libraries
 URL:		http://httpd.apache.org/apreq/
@@ -95,8 +95,8 @@ Version:	%{rversion}
 Group:		System/Servers
 Requires:	apache-mod_perl
 Requires:	apache-mod_apreq = %{rversion}
-Provides:   perl-libapreq
-Obsoletes:  perl-libapreq
+Provides:	perl-libapreq
+Obsoletes:	perl-libapreq
 
 %description -n perl-libapreq2
 libapreq is a safe, standards-compliant, high-performance library used for
