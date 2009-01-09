@@ -1,5 +1,5 @@
 #Module-Specific definitions
-%define rversion 2.08
+%define rversion 2.10
 %define revision r376644
 
 %define mod_name mod_apreq
@@ -16,18 +16,18 @@ Summary:	Apache Request Library
 Name:		libapreq2
 Version:	%{rversion}
 #Release:	%mkrel 0.%{revision}.2
-Release:	%mkrel 16
+Release:	%mkrel 0.0.RC1.1
 License:	Apache License
 Group:          System/Libraries
 URL:		http://httpd.apache.org/apreq/
 #Source0:	libapreq2-%{rversion}-%{revision}.tar.bz2
-Source0:	http://www.apache.org/dist/httpd/libapreq/libapreq2-%{rversion}.tar.gz
-Source1:	http://www.apache.org/dist/httpd/libapreq/libapreq2-%{rversion}.tar.gz.asc
+#Source0:	http://www.apache.org/dist/httpd/libapreq/libapreq2-%{rversion}.tar.gz
+#Source1:	http://www.apache.org/dist/httpd/libapreq/libapreq2-%{rversion}.tar.gz.asc
+Source0:	http://people.apache.org/~bojan/libapreq2-%{rversion}-RC1.tar.gz
+Source1:	http://people.apache.org/~bojan/libapreq2-%{rversion}-RC1.tar.gz.asc
 Source2:	76_mod_apreq2.conf
 Patch0:		libapreq2-2.03-dev-version_check_fix.diff
 Patch1:		libapreq2-2.08-autoconf260.diff
-Patch2:		libapreq2-2.08-test_fixes.diff
-Patch3:		libapreq2-includes_fix.diff
 BuildRequires:	autoconf2.5
 BuildRequires:	automake1.7
 BuildRequires:	chrpath
@@ -124,8 +124,6 @@ Mod_%{name} is a DSO module for the apache Web server.
 %setup -q -n libapreq2-%{rversion}
 %patch0 -p0
 %patch1 -p0
-%patch2 -p1
-%patch3 -p0
 
 # got the idea why this wasn't working from debian, thanks guys!
 # P0 combined with this hack fixes it all...
@@ -163,7 +161,7 @@ sh ./buildconf
 #make test
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %makeinstall_std
 
@@ -211,7 +209,7 @@ if [ "$1" = "0" ]; then
 fi
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root)
