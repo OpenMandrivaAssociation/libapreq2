@@ -1,5 +1,5 @@
 #Module-Specific definitions
-%define rversion 2.10
+%define rversion 2.11
 %define revision r376644
 
 %define mod_name mod_apreq
@@ -15,16 +15,13 @@
 Summary:	Apache Request Library
 Name:		libapreq2
 Version:	%{rversion}
-#Release:	%mkrel 0.%{revision}.2
-Release:	%mkrel 0.0.RC1.1
+Release:	%mkrel 0.1
 License:	Apache License
 Group:          System/Libraries
 URL:		http://httpd.apache.org/apreq/
 #Source0:	libapreq2-%{rversion}-%{revision}.tar.bz2
-#Source0:	http://www.apache.org/dist/httpd/libapreq/libapreq2-%{rversion}.tar.gz
-#Source1:	http://www.apache.org/dist/httpd/libapreq/libapreq2-%{rversion}.tar.gz.asc
-Source0:	http://people.apache.org/~bojan/libapreq2-%{rversion}-RC1.tar.gz
-Source1:	http://people.apache.org/~bojan/libapreq2-%{rversion}-RC1.tar.gz.asc
+Source0:	http://people.apache.org/~issac/libapreq2-%{rversion}.tar.gz
+Source1:	http://people.apache.org/~issac/libapreq2-%{rversion}.tar.gz.asc
 Source2:	76_mod_apreq2.conf
 Patch0:		libapreq2-2.03-dev-version_check_fix.diff
 Patch1:		libapreq2-2.08-autoconf260.diff
