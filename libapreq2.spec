@@ -1,5 +1,5 @@
 #Module-Specific definitions
-%define rversion 2.12
+%define rversion 2.13
 %define revision r376644
 
 %define mod_name mod_apreq
@@ -14,8 +14,8 @@
 
 Summary:	Apache Request Library
 Name:		libapreq2
-Version:	%{rversion}
-Release:	%mkrel 5
+Version:	%perl_convert_version %{rversion}
+Release:	%mkrel 0.0.1
 License:	Apache License
 Group:          System/Libraries
 URL:		http://httpd.apache.org/apreq/
