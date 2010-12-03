@@ -15,7 +15,7 @@
 Summary:	Apache Request Library
 Name:		libapreq2
 Version:	%perl_convert_version %{rversion}
-Release:	%mkrel 0.0.3
+Release:	%mkrel 1
 License:	Apache License
 Group:          System/Libraries
 URL:		http://httpd.apache.org/apreq/
@@ -56,7 +56,6 @@ This package contains the shared libraries for %{name}
 %if "%{_lib}" != "lib"
 %package -n	%{libname}
 Summary:	Apache Request Library
-Version:	%{rversion}
 Group: 		System/Libraries
 
 %description -n	%{libname}
@@ -71,7 +70,6 @@ This package contains the shared libraries for %{name}
 
 %package -n	%{develname}
 Summary:	Development library and header files for the Apache Request Library
-Version:	%{rversion}
 Group:		Development/C
 Requires:	%{libname} = %{version}
 Provides:	libapreq-devel = %{version}
@@ -88,10 +86,9 @@ This package contains the development library and its header files.
 
 %package -n	perl-libapreq2
 Summary:	Apache Request Library Perl Glue
-Version:	%{rversion}
 Group:		System/Servers
 Requires:	apache-mod_perl
-Requires:	apache-mod_apreq = %{rversion}
+Requires:	apache-mod_apreq >= %{version}
 Provides:	perl-libapreq
 Obsoletes:	perl-libapreq
 
@@ -111,7 +108,7 @@ Requires(pre):	apache-conf >= 2.2.0
 Requires(pre):	apache >= %{apache_version}
 Requires:	apache-conf >= 2.2.0
 Requires:	apache >= %{apache_version}
-Requires:	perl-libapreq2 = %{rversion}
+Requires:	perl-libapreq2 >= %{version}
 
 %description -n	apache-%{mod_name}
 Mod_%{name} is a DSO module for the apache Web server.
