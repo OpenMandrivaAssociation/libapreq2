@@ -15,7 +15,7 @@
 Summary:	Apache Request Library
 Name:		libapreq2
 Version:	%perl_convert_version %{rversion}
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	Apache License
 Group:          System/Libraries
 URL:		http://httpd.apache.org/apreq/
@@ -26,7 +26,7 @@ Source2:	76_mod_apreq2.conf
 Patch0:		libapreq2-2.03-dev-version_check_fix.diff
 Patch1:		libapreq2-2.08-autoconf260.diff
 BuildRequires:	autoconf2.5
-BuildRequires:	automake1.7
+BuildRequires:	automake
 BuildRequires:	chrpath
 BuildRequires:	perl-devel
 BuildRequires:	perl-doc
@@ -127,10 +127,10 @@ cp %{SOURCE2} %{mod_conf}
 
 %build
 export WANT_AUTOCONF_2_5=1
-#libtoolize --copy --force && aclocal-1.7 && autoconf && autoheader && automake-1.7 -a -c
+#libtoolize --copy --force && aclocal && autoconf && autoheader && automake -a -c
 
-export AUTOMAKE="automake-1.7"
-export ACLOCAL="aclocal-1.7"
+export AUTOMAKE="automake"
+export ACLOCAL="aclocal"
 
 sh ./buildconf
 
