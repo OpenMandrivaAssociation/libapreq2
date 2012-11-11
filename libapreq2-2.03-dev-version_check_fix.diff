@@ -1,0 +1,11 @@
+--- build/version_check.pl	2006-08-09 06:26:44.000000000 +0200
++++ build/version_check.pl.oden	2009-01-06 16:41:13.000000000 +0100
+@@ -6,7 +6,7 @@ GetOptions(\my %opts, "version=s");
+ my ($tool, $path) = @ARGV;
+ $path = $tool unless defined $path;
+ 
+-sub exe_version { scalar qx/$path -v/ }
++sub exe_version { return "_APACHE2_REAL_VERSION_"; }
+ sub gnu_version { scalar qx/$path --version/ }
+ 
+ sub xsb_version {
