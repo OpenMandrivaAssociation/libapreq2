@@ -1,0 +1,28 @@
+diff -urN libapreq2-2.13/library/Makefile.am libapreq2-2.13-patched/library/Makefile.am
+--- libapreq2-2.13/library/Makefile.am	2010-11-26 05:11:28.000000000 +1000
++++ libapreq2-2.13-patched/library/Makefile.am	2012-10-13 01:08:34.000000000 +1100
+@@ -1,11 +1,11 @@
+ EXTRA_DIST = t
+ AM_CPPFLAGS = @APR_INCLUDES@
+-BUILT_SOURCES = @APR_LA@ @APU_LA@
++BUILT_SOURCES = @APR_LA@
+ lib_LTLIBRARIES = libapreq2.la
+ libapreq2_la_SOURCES = util.c version.c cookie.c param.c parser.c \
+                        parser_urlencoded.c parser_header.c parser_multipart.c \
+ 	               module.c module_custom.c module_cgi.c error.c
+-libapreq2_la_LDFLAGS = -version-info @APREQ_LIBTOOL_VERSION@ @APR_LTFLAGS@ @APR_LIBS@
++libapreq2_la_LDFLAGS = -version-info @APREQ_LIBTOOL_VERSION@ -lapr-1 -laprutil-1 @APR_LIBS@
+ 
+ test: all
+ 	cd t; $(MAKE) test
+diff -urN libapreq2-2.13/module/apache2/Makefile.am libapreq2-2.13-patched/module/apache2/Makefile.am
+--- libapreq2-2.13/module/apache2/Makefile.am	2010-11-26 05:11:27.000000000 +1000
++++ libapreq2-2.13-patched/module/apache2/Makefile.am	2012-10-13 01:09:07.000000000 +1100
+@@ -1,6 +1,6 @@
+ TEST_CONFIG_SCRIPT = package Apache::TestMM; filter_args(); generate_script("t/TEST")
+ mod_apreq2_la_LDFLAGS = -export-dynamic -module -avoid-version \
+-                        `@APREQ_CONFIG@ --link-libtool --libs` @APR_LTFLAGS@
++                        `@APREQ_CONFIG@ --link-libtool --libs` -lapr-1 -laprutil-1
+ mod_apreq2_la_SOURCES = apreq_private_apache2.h handle.c filter.c
+ 
+ pkgcfgdir = `@APACHE2_APXS@ -q SYSCONFDIR`
