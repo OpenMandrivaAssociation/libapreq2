@@ -18,7 +18,7 @@ Version:	%perl_convert_version %{rversion}
 Release:	5
 License:	Apache License
 Group:		System/Libraries
-URL:		http://httpd.apache.org/apreq/
+URL:		https://httpd.apache.org/apreq/
 #Source0:	libapreq2-%{rversion}-%{revision}.tar.bz2
 Source0:	http://people.apache.org/~issac/libapreq2-%{rversion}.tar.gz
 Source1:	http://people.apache.org/~issac/libapreq2-%{rversion}.tar.gz.asc
