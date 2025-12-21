@@ -28,6 +28,8 @@ Patch0:		libapreq2-2.03-dev-version_check_fix.diff
 Patch1:		libapreq2-2.08-autoconf260.diff
 Patch2:		libapreq2-2.09-pkgconfig.patch
 Patch3:		libapreq2-2.13-libtool.patch
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	autoconf2.5
 BuildRequires:	automake
 BuildRequires:	chrpath
