@@ -14,13 +14,13 @@
 
 Summary:	Apache Request Library
 Name:		libapreq2
-Version:	%perl_convert_version %{rversion}
-Release:	5
+Version:	2.16
+Release:	1
 License:	Apache License
 Group:		System/Libraries
 URL:		https://httpd.apache.org/apreq/
 #Source0:	libapreq2-%{rversion}-%{revision}.tar.bz2
-Source0:	http://people.apache.org/~issac/libapreq2-%{rversion}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/S/SH/SHAY/libapreq2-2.16.tar.gz
 Source1:	http://people.apache.org/~issac/libapreq2-%{rversion}.tar.gz.asc
 Source2:	76_mod_apreq2.conf
 Source3:	libapreq2.pc.in
